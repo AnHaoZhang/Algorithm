@@ -40,7 +40,7 @@ public class BubbleSort {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-                bubbleSort(arr);
+         bubbleSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 }
