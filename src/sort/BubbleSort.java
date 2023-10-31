@@ -12,17 +12,25 @@ import java.util.Scanner;
 
 public class BubbleSort {
     public static void bubbleSort(int[] arr) {
+        /* 获取传入数组长度*/
         int len = arr.length;
+        /* 遍历数组*/
         for (int i = 0; i < len - 1; i++) {
+            /* 声明退出标志 */
             boolean flag = true;
+            /* 遍历数组*/
             for (int j = 0; j < len - i - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
+                /* 比较相邻的元素*/
+                if (arr[j] < arr[j + 1]) {
+                    /* 交换，按从大到小排序*/
                     int tmp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = tmp;
+                    /* 交换标志*/
                     flag = false;
                 }
             }
+            /* 退出循环*/
             if (flag) {
                 break;
             }

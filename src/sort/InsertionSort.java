@@ -6,6 +6,7 @@ import java.util.Scanner;
 /**
  * @author cbz
  * @version 1.0
+ * 插入排序
  */
 public class InsertionSort {
     public static void insertionSort(int[] arr) {

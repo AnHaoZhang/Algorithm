@@ -6,6 +6,7 @@ import java.util.Scanner;
 /**
  * @author cbz
  * @version 1.0
+ * 快速排序
  */
 public class QuickSort {
     public static void quickSort(int[] arr) {

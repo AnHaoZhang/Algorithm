@@ -6,6 +6,7 @@ import java.util.Scanner;
 /**
  * @author cbz
  * @version 1.0
+ * 选择排序
  */
 public class SelectionSort {
     public static void selectionSort(int[] arr) {

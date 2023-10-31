@@ -3,9 +3,12 @@ package sort;
 /**
  * @author cbz
  * @version 1.0
+ * 基数排序
  */
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 //基数排序
 public class RadixSort {
@@ -40,6 +43,20 @@ public class RadixSort {
                 }
             }
         }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("请输入数组长度");
+        int n = scanner.nextInt();
+        int[] arr = new int[n];
+        System.out.println("请输入数组");
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        radixSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }
 

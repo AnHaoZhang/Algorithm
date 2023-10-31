@@ -3,6 +3,7 @@ package sort;
 /**
  * @author cbz
  * @version 1.0
+ * 归并排序
  */
 import java.util.Arrays;
 import java.util.Scanner;

@@ -6,6 +6,7 @@ import java.util.Scanner;
 /**
  * @author cbz
  * @version 1.0
+ * 希尔排序
  */
 public class ShellSort {
     public static void shellSort(int[] arr) {
