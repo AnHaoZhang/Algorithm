@@ -11,10 +11,13 @@ import java.util.Scanner;
 public class ShellSort {
     public static void shellSort(int[] arr) {
         int len = arr.length, tmp, j;
+        // 初始间隔为数组长度的一半，然后逐渐减小间隔
         for (int gap = len / 2; gap >= 1; gap = gap / 2) {
+            // 从第gap个元素,逐个对其所在的组进行直接插入排序
             for (int i = gap; i < len; i++) {
                 tmp = arr[i];
                 j = i - gap;
+                // 从第j个元素开始向前搜索插入的位置
                 while (j >= 0 && arr[j] > tmp) {
                     arr[j + gap] = arr[j];
                     j -= gap;
@@ -36,5 +39,6 @@ public class ShellSort {
         }
         shellSort(arr);
         System.out.println(Arrays.toString(arr));
+        scanner.close();
     }
 }

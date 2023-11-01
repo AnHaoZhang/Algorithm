@@ -10,25 +10,31 @@ import java.util.Scanner;
  */
 public class QuickSort {
     public static void quickSort(int[] arr) {
+        // 调用快速排序算法，传入数组，数组的长度，以及数组的起始索引
         sort(arr, 0, arr.length - 1);
     }
 
     private static void sort(int[] arr, int left, int right) {
         if (left < right) {
+            // 1、选取基准值
             int pivotIdx = partition(arr, left, right);
+            // 2、递归排序左右子数组
             sort(arr, 0, pivotIdx - 1);
             sort(arr, pivotIdx + 1, right);
         }
     }
 
     private static int partition(int[] arr, int left, int right) {
-        int idx = left + 1;
+        int idx = left + 1;// 初始化索引 i 为 -1
+        // 从左往右遍历数组，找出小于 arr[left] 的数，放在左边，大于 arr[left] 的数放在右边
         for (int i = idx; i <= right; i++) {
             if (arr[left] > arr[i]) {
+                // 交换
                 swap(arr, i, idx++);
             }
         }
         swap(arr, left, idx - 1);
+        // 返回中轴索引
         return idx - 1;
     }
 
@@ -51,6 +57,7 @@ public class QuickSort {
         }
         quickSort(arr);
         System.out.println(Arrays.toString(arr));
+        scanner.close();
     }
 }
 

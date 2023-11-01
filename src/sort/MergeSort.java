@@ -14,24 +14,31 @@ public class MergeSort {
         if (len < 2) {
             return arr;
         }
-
+        //递归分解
         int mIdx = len / 2;
+        //分解
         return merge(mergeSort(Arrays.copyOfRange(arr, 0, mIdx)), mergeSort(Arrays.copyOfRange(arr, mIdx, len)));
     }
 
     private static int[] merge(int[] arrLeft, int[] arrRight) {
+        //合并
         int leftLen = arrLeft.length, rightLen = arrRight.length, leftIdx = 0, rightIdx = 0, idx = 0;
+        //初始化结果数组
         int[] result = new int[leftLen + rightLen];
+        //合并
         while (leftIdx < leftLen && rightIdx < rightLen) {
+            //比较
             if (arrLeft[leftIdx] < arrRight[rightIdx]) {
                 result[idx++] = arrLeft[leftIdx++];
             } else {
                 result[idx++] = arrRight[rightIdx++];
             }
         }
+        //合并
         while (leftIdx < leftLen) {
             result[idx++] = arrLeft[leftIdx++];
         }
+        //合并
         while (rightIdx < rightLen) {
             result[idx++] = arrRight[rightIdx++];
         }
@@ -51,6 +58,7 @@ public class MergeSort {
         }
         mergeSort(arr);
         System.out.println(Arrays.toString(arr));
+        scanner.close();
     }
 }
 

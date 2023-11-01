@@ -9,13 +9,17 @@ import java.util.Scanner;
  * 插入排序
  */
 public class InsertionSort {
+    //插入排序
     public static void insertionSort(int[] arr) {
+        //1、从1开始，遍历数组
         for (int i = 1; i < arr.length; i++) {
             int val = arr[i], j = i;
+            //从后往前遍历
             while (j > 0 && val < arr[j - 1]) {
                 arr[j] = arr[j - 1];
                 j--;
             }
+            //插入
             arr[j] = val;
         }
     }
@@ -32,5 +36,6 @@ public class InsertionSort {
         }
         insertionSort(arr);
         System.out.println(Arrays.toString(arr));
+        scanner.close();
     }
 }

@@ -13,15 +13,20 @@ import java.util.Scanner;
 //基数排序
 public class RadixSort {
     public static void radixSort(int[] arr) {
+        //获取数组长度
         if (arr.length < 2) return;
-        int maxVal = arr[0];//求出最大值
+        //求出最大值
+        int maxVal = arr[0];
         for (int a : arr) {
             if (maxVal < a) {
                 maxVal = a;
             }
         }
+        //获取最大值位数
         int n = 1;
-        while (maxVal / 10 != 0) {//求出最大值位数
+        //求出最大值位数
+        while (maxVal / 10 != 0) {
+            //除以10
             maxVal /= 10;
             n++;
         }
@@ -29,10 +34,12 @@ public class RadixSort {
         for (int i = 0; i < n; i++) {
             List<List<Integer>> radix = new ArrayList<>();
             for (int j = 0; j < 10; j++) {
+                //初始化
                 radix.add(new ArrayList<>());
             }
             int index;
             for (int a : arr) {
+                //获取最大值
                 index = (a / (int) Math.pow(10, i)) % 10;
                 radix.get(index).add(a);
             }
@@ -57,6 +64,7 @@ public class RadixSort {
         }
         radixSort(arr);
         System.out.println(Arrays.toString(arr));
+        scanner.close();
     }
 }
 

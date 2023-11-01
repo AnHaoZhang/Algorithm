@@ -27,7 +27,7 @@ public class BucketSort {
                 maxVal = arr.get(i);
             }
         }
-        /* 计算桶大小*/
+        /* 1、计算桶大小，确定桶的数量*/
         int bucketNum = (maxVal - minVal) / bucketSize + 1;
         /* 创建桶*/
         List<List<Integer>> bucket = new ArrayList<>();
@@ -35,17 +35,19 @@ public class BucketSort {
         for (int i = 0; i < bucketNum; i++) {
             bucket.add(new ArrayList<>());
         }
-        /* 桶排序*/
+        /* 2、桶排序*/
         for (int val : arr) {
             int idx = (val - minVal) / bucketSize;
             bucket.get(idx).add(val);
         }
+        /* 3、对每个桶进行排序，此处可变为使用任何排序算法*/
         for (int i = 0; i < bucketNum; i++) {
             if (bucket.get(i).size() > 1) {
+
                 bucket.set(i, bucketSort(bucket.get(i), bucketSize / 2));
             }
         }
-        /* 合并桶*/
+        /* 4、合并桶*/
         List<Integer> result = new ArrayList<>();
         for (List<Integer> val : bucket) {
             result.addAll(val);

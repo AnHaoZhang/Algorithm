@@ -13,7 +13,9 @@ public class CountingSort {
         //获取数组长度
         int len = arr.length;
         if (len < 2) return;
+        //1.获取最大值和最小值
         int minVal = arr[0], maxVal = arr[0];
+        //遍历数组
         for (int i = 1; i < len; i++) {
             if (arr[i] < minVal) {
                 minVal = arr[i];
@@ -21,14 +23,16 @@ public class CountingSort {
                 maxVal = arr[i];
             }
         }
-        //计算最大值和最小值的差值
+        //2. 创建初始化一个计数数组（counting array），长度为`max - min + 1`
         int[] countArr = new int[maxVal - minVal + 1];
+
+        //3.遍历待排序数组，统计每个元素出现次数
         for (int val : arr) {
             countArr[val - minVal]++;
         }
-        //初始化数组
+
+        //4.根据计数数组生成已排序数组
         for (int arrIdx = 0, countIdx = 0; countIdx < countArr.length; countIdx++) {
-            //计数排序
             while (countArr[countIdx]-- > 0) {
                 arr[arrIdx++] = minVal + countIdx;
             }
@@ -45,11 +49,9 @@ public class CountingSort {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-
-
         countingSort(arr);
         System.out.println(Arrays.toString(arr));
-        /* */
+        scanner.close();
 
 
     }
