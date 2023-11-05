@@ -1,5 +1,6 @@
 package DynamicProgramming;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -29,18 +30,22 @@ public class knapsack {
         Scanner sc = new Scanner(System.in);
         System.out.println("请输入物品个数n:");
         int n = sc.nextInt();
-        
+        System.out.println("请输入背包重量w:");
         int w = sc.nextInt();
+
         int[] values = new int[n + 1];
         int[] costs = new int[n + 1];
 
+        System.out.println("请输入物品价值v:");
         for (int i = 1; i <= n; i++) {
             values[i] = sc.nextInt();
         }
+        System.out.println("请输入物品重量c:");
         for (int i = 1; i <= n; i++) {
             costs[i] = sc.nextInt();
         }
         knapsack(n,w,values,costs);
+        sc.close();
 
     }
 

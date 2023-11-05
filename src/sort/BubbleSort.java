@@ -30,7 +30,7 @@ public class BubbleSort {
                     flag = false;
                 }
             }
-            /* 退出循环*/
+            /* */
             if (flag) {
                 break;
             }
