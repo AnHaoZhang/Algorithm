@@ -76,7 +76,7 @@ public class numWays {
 //        for (int next : list) {
 //            dfs(next,s+1);
 //        }
-    }
+
 
 
 
