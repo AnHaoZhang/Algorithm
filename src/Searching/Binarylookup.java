@@ -69,7 +69,6 @@ public class Binarylookup {
 
         return -1;		//最后仍然没有找到，则返回-1
     }
-
     public static void main(String[] args) {
 
         System.out.println("请输入数组长度");

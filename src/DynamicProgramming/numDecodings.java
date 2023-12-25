@@ -17,6 +17,7 @@ public class numDecodings {
             dp[i] = s.charAt(i);
             System.out.println("dp[i]="+dp[i]);
         }
+
         return 0;
     }
 }
