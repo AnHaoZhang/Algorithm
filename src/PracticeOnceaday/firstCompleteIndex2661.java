@@ -1,6 +1,6 @@
 package PracticeOnceaday;
 
-import sun.security.krb5.KdcComm;
+//import sun.security.krb5.KdcComm;
 
 import javax.swing.plaf.IconUIResource;
 import java.util.HashMap;
