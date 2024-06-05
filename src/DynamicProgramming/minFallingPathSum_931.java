@@ -6,7 +6,7 @@ import java.util.Arrays;
  * @author cbz
  * @version 1.0
  */
-public class minFallingPathSum {
+public class minFallingPathSum_931 {
     public static int minFallingPathSum(int[][] matrix) {
         int n = matrix.length;
         int[][] dp = new int[n][n];
@@ -31,3 +31,5 @@ public class minFallingPathSum {
         System.out.println(i);
     }
 }
+
+
