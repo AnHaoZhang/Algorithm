@@ -34,11 +34,11 @@ public class findNumberOfLIS_673 {
             // 遍历nums[0]到nums[i-1]
             for (int j = 0; j < i; ++j) {
                 if (nums[i] > nums[j]) { // 如果nums[i]大于nums[j]，说明可以形成上升子序列
-                    if (dp[j] + 1 > dp[i]) { // 如果以nums[j]结尾的子序列加上nums[i]后长度大于当前dp[i]
-                        dp[i] = dp[j] + 1; // 更新dp[i]
-                        cnt[i] = cnt[j]; // 重置计数，因为发现了更长的上升子序列
-                    } else if (dp[j] + 1 == dp[i]) { // 如果以nums[j]结尾的子序列加上nums[i]后长度等于当前dp[i]
-                        cnt[i] += cnt[j]; // 增加计数，因为发现了相同长度的上升子序列
+                    if (dp[j] + 1 > dp[i]) { // 检查是否可以形成更长的上升子序列
+                        dp[i] = dp[j] + 1; // 更新dp[i]为更长的上升子序列长度
+                        cnt[i] = cnt[j]; // 重置计数为cnt[j]，因为发现了更长的上升子序列
+                    } else if (dp[j] + 1 == dp[i]) { // 如果形成的上升子序列长度相同
+                        cnt[i] += cnt[j]; // 增加计数，因为有多种途径形成相同长度的上升子序列
                     }
                 }
             }
@@ -53,6 +53,20 @@ public class findNumberOfLIS_673 {
         // 返回最长上升子序列的个数
         return ans;
 
+        /**
+         * dp[j] + 1 > dp[i] 的作用和意义如下：
+         * 作用：
+         * 这一条件用来判断是否能通过 nums[i] 和 nums[j] 形成一个新的、更长的上升子序列。如果可以形成更长的上升子序列，则更新 dp[i] 和 cnt[i] 的值。
+         * 意义：
+         * 在动态规划算法中，dp[i] 表示以 nums[i] 结尾的最长上升子序列的长度。而 dp[j] 表示以 nums[j] 结尾的最长上升子序列的长度。
+         * 如果 nums[i] > nums[j]，表示 nums[i] 可以接在 nums[j] 后面形成一个上升子序列。此时，如果 dp[j] + 1 > dp[i]，
+         * 说明以 nums[j] 结尾的上升子序列加上 nums[i] 形成的子序列比当前已知的以 nums[i] 结尾的最长子序列还要长，因此需要更新 dp[i]。
+         *
+         * 详细解释：
+         * dp[j] + 1 表示如果把 nums[i] 接到以 nums[j] 结尾的最长上升子序列后面的长度。
+         * dp[i] 当前以 nums[i] 结尾的最长上升子序列的长度。
+         * 如果 dp[j] + 1 > dp[i]，说明以 nums[j] 结尾的上升子序列加上 nums[i] 会形成一个比当前已知的以 nums[i] 结尾的最长上升子序列更长的新子序列，所以需要更新 dp[i] 和 cnt[i]。
+         */
     }
 
     public static void main(String[] args) {
