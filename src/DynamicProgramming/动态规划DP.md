@@ -260,3 +260,5 @@ public int climbStairsOptimized(int n) {
 312. 戳气球
 712. 两个字符串的最小ASCII删除和
 115. 不同的子序列 困难
+300. 最长递增子序列
+673. 最长递增子序列的个数

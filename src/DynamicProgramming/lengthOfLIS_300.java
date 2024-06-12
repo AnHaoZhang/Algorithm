@@ -52,7 +52,8 @@ public class lengthOfLIS_300 {
     }
     public static void main(String[] args) {
 //        int[] nums = {0,1,0,3,3,3};
-        int[] nums = {10, 9, 2, 5, 3, 7, 101, 18};
+//        int[] nums = {10, 9, 2, 5, 3, 7, 101, 18};
+        int[] nums = {1,3,5,4,7};
         System.out.println(lengthOfLIS(nums));
     }
 }
