@@ -4,7 +4,7 @@ package Cupidity;
  * @author cbz
  * @version 1.0
  */
-public class canjump {
+public class canjump_55 {
     /**
      * 55. 跳跃游戏
      *
