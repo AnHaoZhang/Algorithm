@@ -9,17 +9,13 @@ import java.util.Scanner;
 public class divisorGame {
     public boolean divisorGame(int n) {
         int count = 0;
-//        int[] dp = new int[n];
         for(int i = 1; i < n;){
             if(n % i == 0){
                 n -= i;
                 count++;
             }
         }
-
-
         return (count+1) % 2 == 0;
-
     }
 
     public static void main(String[] args) {
