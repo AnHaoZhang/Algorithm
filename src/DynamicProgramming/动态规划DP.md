@@ -266,3 +266,4 @@ public int climbStairsOptimized(int n) {
 55. 跳跃游戏
 70. 爬楼梯
 338. 比特位计数
+1027. 最长等差数列
