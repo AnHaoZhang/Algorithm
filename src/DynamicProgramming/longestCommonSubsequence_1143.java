@@ -22,8 +22,10 @@ public class longestCommonSubsequence_1143 {
     public static void main(String[] args) {
 //        "abcde";"ace"; "ezupkr" "ubmrapg"
 
-        String text1 = "oxcpqrsvwf";
-        String text2 = "shmtulqrypy";
+        String text1 = "abcde";
+        String text2 = "ace";
+//        String text1 = "oxcpqrsvwf";
+//        String text2 = "shmtulqrypy";
 //        String text1 ="bsbininm";
 //        String text2 = "jmjkbkjkv";
         System.out.println(longestCommonSubsequence(text1,text2));
